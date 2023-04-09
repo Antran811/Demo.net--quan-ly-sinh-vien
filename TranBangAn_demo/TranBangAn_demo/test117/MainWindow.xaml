@@ -1,0 +1,67 @@
+﻿<Window x:Class="test117.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:test117"
+        mc:Ignorable="d"
+        Title="Demo_QuanLySinhVien_TranBangAn" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border BorderBrush="Black" BorderThickness="1" Background="Beige" Grid.ColumnSpan="3" Margin="0,54,0,0" Grid.RowSpan="8"/>
+        <Label Grid.Column="1" Content="Quản Lý Sinh Viên" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20" />
+        <Label Content="Ma sinh viên " HorizontalAlignment="Left" Margin="95,9,0,0" VerticalAlignment="Top" Grid.Row="2"/>
+        <Label Content="Họ và tên " HorizontalAlignment="Left" Margin="95,0,0,0" VerticalAlignment="Center" Grid.Row="1"/>
+        <Label Content="Ngày sinh " HorizontalAlignment="Left" Margin="95,14,0,10" Grid.Row="3" RenderTransformOrigin="0.557,0.737"/>
+        <Label Content="Giới tính " HorizontalAlignment="Left" Margin="95,18,0,0" VerticalAlignment="Top" Grid.Row="4"/>
+        <Label Content="Điểm TB " HorizontalAlignment="Left" Margin="95,0,0,0" VerticalAlignment="Center" Grid.Row="5"/>
+        <DataGrid x:Name="danhsach" Grid.Row="6"  Grid.ColumnSpan="3" Grid.RowSpan="2" AutoGenerateColumns="False" >
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="MaSV" Binding="{Binding Masv}"></DataGridTextColumn>
+                <DataGridTextColumn Header="HoTen" Binding="{Binding Tensv }"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ngaysinh" Binding="{Binding Ngaysinh}"></DataGridTextColumn>
+                <DataGridTextColumn Header="GioiTinh" Binding="{Binding Gioitinh}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Khoa" Binding="{Binding Khoa}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Tuoi" Binding="{Binding tuoi }"></DataGridTextColumn>
+                <DataGridTextColumn Header="Diem" Binding="{Binding Diemtb}"></DataGridTextColumn>
+                <DataGridTextColumn Header=" Sotienhocbong" Binding="{Binding hocbong }"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="txtten" Margin="18,0,48,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="200" Grid.Column="1" Grid.Row="1" Height="22" />
+        <TextBox x:Name="txtdiem" Margin="18,14,48,15" TextWrapping="Wrap" Text="" Width="200" Grid.Column="1" Grid.Row="5"/>
+        <TextBox x:Name="txtmasv" Margin="18,13,48,20" TextWrapping="Wrap" Text="" Width="200" Grid.Column="1" Grid.Row="2"/>
+        <ComboBox x:Name="txtkhoa" HorizontalAlignment="Left" Margin="95,0,0,0" VerticalAlignment="Center" Width="120" Grid.Column="2" Grid.Row="1" SelectedIndex="0">
+            <ComboBoxItem>CNTT</ComboBoxItem>
+            <ComboBoxItem>Kinh Te</ComboBoxItem>
+            <ComboBoxItem>Co Khi</ComboBoxItem>
+        </ComboBox>
+        <Label Content="Khoa" HorizontalAlignment="Left" Margin="35,0,0,0" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2"/>
+
+        <DatePicker x:Name="txtngaysinh" SelectedDate="02/11/2000" Margin="18,15,106,11" Grid.Column="1" Grid.Row="3"/>
+        <StackPanel Orientation="Horizontal" Margin="18,13,74,13" Grid.Column="1" Grid.Row="4" x:Name="txtgioitinh">
+            <RadioButton Content="Nam" IsChecked="True" x:Name="Namx"></RadioButton>
+            <RadioButton Content="Nu" x:Name="Nuy"></RadioButton>
+        </StackPanel>
+        <Button Content="Them" Margin="95,0,70,16" Grid.Column="2" Grid.Row="2" Height="33" VerticalAlignment="Bottom" Click="Button_Click"  Style="{StaticResource btn_key}" />
+        <Button Content="Xoa" Margin="95,10,70,0" Grid.Column="2" Grid.Row="3"  Height="33" VerticalAlignment="Top" Click="Button_Click_1" Style="{StaticResource btn_key}"/>
+        <Button Content="Sua" Margin="95,7,70,13" Grid.Column="2" Grid.Row="4" Click="Button_Click_2" Style="{StaticResource btn_key}" />
+        <Button x:Name="btntimkiem" Content="Tim Kiem" Margin="156,11,10,11" Grid.Column="2" Grid.Row="5" Click="btntimkiem_Click"   />
+        <TextBox x:Name="txttimkiem" Margin="27,14,121,16" TextWrapping="Wrap" Text="" Grid.Column="2" Grid.Row="5"/>
+    </Grid>
+</Window>
